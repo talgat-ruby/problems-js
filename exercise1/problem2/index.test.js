@@ -1,5 +1,5 @@
-const intWithinBounds = require("./index");
 const { describe, expect, test } = require("@jest/globals");
+const intWithinBounds = require("./index");
 
 describe("exercise1 - problem2", () => {
   test.each([

@@ -1,5 +1,5 @@
-const numOfDigits = require("./index");
 const { describe, expect, test } = require("@jest/globals");
+const numOfDigits = require("./index");
 
 describe("exercise1 - problem1", () => {
   test.each([
