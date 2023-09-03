@@ -3,7 +3,7 @@ function intWithinBounds(n, lower, upper) {
     return false;
   }
 
-  if (lower <= n && n <= upper) {
+  if (lower < n && n < upper && lower !== upper) {
     return true;
   } else {
     return false;
