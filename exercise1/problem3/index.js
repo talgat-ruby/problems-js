@@ -3,7 +3,7 @@ function pentagonal(n) {
     return 1;
   }
 
-  return 1 + 5 * (n - 1) * (n - 2) / 2;
+  return (5 * Math.pow(n, 2) - 5 * n + 2) / 2;
 }
 
 module.exports = pentagonal;
