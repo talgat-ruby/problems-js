@@ -5,7 +5,7 @@ function numOfDigits(int) {
         return 1
     }
     while (int != 0) {
-        n = Math.floor(int / 10)
+        int = Math.floor(int / 10)
         count++
     }
     return count
