@@ -13,4 +13,5 @@ function numOfDigits(int) {
   
   return count;
 }
+
 module.exports = numOfDigits;

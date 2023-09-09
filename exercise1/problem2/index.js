@@ -9,4 +9,5 @@ function intWithinBounds(n, lower, upper) {
     return false;
   }
 }
+
 module.exports = intWithinBounds;
