@@ -1,14 +1,14 @@
-function sortIt(arr) {
-    return arr.sort((a, b) => {
-      let num1 = typeof a === "number" ? a : a[0];
-      let num2 = typeof b === "number" ? b : b[0];
-      return num1 - num2;
-    });
+function numbersSum(arr) {
+  let x = 0
+  for (i = 0; i < arr.length; i++){
+      if (typeof arr[i] === "number") {
+          x += arr[i]
+      }
   }
-console.log(sortIt([4, 1, 3])) // [1, 3, 4]
-console.log(sortIt([[4], [1], [3]])) // [[1], [3], [4]]
-console.log(sortIt([4, [1], 3])) // [[1], 3, 4]
-console.log(sortIt([[4], 1, [3]])) // [1, [3], [4]]
-console.log(sortIt([[3], 4, [2], [5], 1, 6])) // [1, [2], [3], 4, [5], 6]
+  return x
+}
+console.log(numbersSum([1, 2, "13", "4", "645"])) // 3
+console.log(numbersSum([true, false, "123", "75"])) // 0
+console.log(numbersSum([1, 2, 3, 4, 5, true])) // 15
 
 module.exports = numbersSum;
