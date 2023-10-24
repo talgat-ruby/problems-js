@@ -5,4 +5,5 @@ function pentagonal(n) {
 
   return (5 * Math.pow(n, 2) - 5 * n + 2) / 2;
 }
-module.exports = pentagonal;
+
+export default pentagonal;

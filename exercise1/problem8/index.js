@@ -12,4 +12,4 @@ function longestTime(h, m, s) {
   }
 }
 
-module.exports = longestTime;
+export default longestTime;

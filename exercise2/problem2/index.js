@@ -8,4 +8,4 @@ function sortIt(arr) {
   return arr.sort(comparator);
 }
 
-module.exports = sortIt;
+export default sortIt;

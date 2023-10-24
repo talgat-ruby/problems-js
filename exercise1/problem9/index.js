@@ -10,4 +10,4 @@ function isDisarium(number) {
   return sum === number;
 }
 
-module.exports = isDisarium;
+export default isDisarium;

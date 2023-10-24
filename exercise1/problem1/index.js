@@ -2,7 +2,7 @@ function numOfDigits(int) {
   if (int === 0) {
     return 1;
   }
-  
+
   int = Math.abs(int); // Для отризательных
 
   let count = 0;
@@ -10,8 +10,8 @@ function numOfDigits(int) {
     int = Math.floor(int / 10);
     count++;
   }
-  
+
   return count;
 }
 
-module.exports = numOfDigits;
+export default numOfDigits;

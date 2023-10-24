@@ -1,5 +1,5 @@
-const { describe, expect, test } = require("@jest/globals");
-const insertWhitespace = require("./index");
+import { describe, expect, test } from "vitest";
+import insertWhitespace from "./index";
 
 describe("exercise1 - problem6", () => {
   test.each([

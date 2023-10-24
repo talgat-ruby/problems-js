@@ -1,25 +1,24 @@
 class BankAccount {
-    #balance;
-  
-    constructor() {
-      this.#balance = 0;
-    }
-  
-    withdraw(amount) {
-      if (amount > this.#balance) {
-        return -1; 
-      }
+  #balance = 0;
+
+  withdraw(amount: number): number {
+    if (amount <= 0 || amount > this.#balance) {
+      return -1;
+    } else {
       this.#balance -= amount;
       return this.#balance;
     }
-  
-    deposit(amount) {
-      if (amount > 1_000_000) {
-        return -1; 
-      }
+  }
+
+  deposit(amount: number): number {
+    if (amount <= 0 || amount > 1000000) {
+      return -1;
+    } else {
       this.#balance += amount;
       return this.#balance;
     }
   }
-  
-  export default BankAccount;
+}
+
+export default BankAccount;
+

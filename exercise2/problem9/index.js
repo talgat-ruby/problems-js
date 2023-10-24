@@ -24,4 +24,4 @@ function duplicateNums(nums) {
   return duplicates;
 }
 
-module.exports = duplicateNums;
+export default duplicateNums;

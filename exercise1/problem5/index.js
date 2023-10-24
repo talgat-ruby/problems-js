@@ -1,9 +1,9 @@
 function removeABC(str) {
-  if (/[abcABC]/.test(str)) { 
-    return str.replace(/[abcABC]/g, ''); 
+  if (/[abcABC]/.test(str)) {
+    return str.replace(/[abcABC]/g, "");
   } else {
-    return null; 
+    return null;
   }
 }
 
-module.exports = removeABC;
+export default removeABC;

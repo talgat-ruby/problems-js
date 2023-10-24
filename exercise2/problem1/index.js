@@ -8,4 +8,4 @@ function arrayOfMultiples(n, length) {
   return multiplesArray;
 }
 
-module.exports = arrayOfMultiples;
+export default arrayOfMultiples;

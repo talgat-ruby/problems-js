@@ -1,5 +1,5 @@
-const { describe, expect, test } = require("@jest/globals");
-const isEqual = require("./index");
+import { describe, expect, test } from "vitest";
+import isEqual from "./index";
 
 describe("exercise2 - problem8", () => {
   test.each([

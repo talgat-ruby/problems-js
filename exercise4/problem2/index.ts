@@ -1,3 +1,4 @@
+
 class Name {
     private _firstName: string;
     private _lastName: string;
@@ -23,5 +24,6 @@ class Name {
       return `${this._firstName[0]}.${this._lastName[0]}`;
     }
   }
+
 
 export default Name;

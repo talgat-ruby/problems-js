@@ -8,4 +8,4 @@ function getBudgets(arr) {
   return totalBudget;
 }
 
-module.exports = getBudgets;
+export default getBudgets;

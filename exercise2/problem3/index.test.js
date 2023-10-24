@@ -1,5 +1,5 @@
-const { describe, expect, test } = require("@jest/globals");
-const numbersSum = require("./index");
+import { describe, expect, test } from "vitest";
+import numbersSum from "./index";
 
 describe("exercise2 - problem3", () => {
   test.each([

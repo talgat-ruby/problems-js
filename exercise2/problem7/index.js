@@ -9,4 +9,4 @@ function afterNYears(people, n) {
   return result;
 }
 
-module.exports = afterNYears;
+export default afterNYears;

@@ -1,5 +1,5 @@
-const { describe, expect, test } = require("@jest/globals");
-const removeABC = require("./index");
+import { describe, expect, test } from "vitest";
+import removeABC from "./index";
 
 describe("exercise1 - problem5", () => {
   test.each([

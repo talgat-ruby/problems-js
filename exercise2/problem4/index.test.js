@@ -1,5 +1,5 @@
-const { describe, expect, test } = require("@jest/globals");
-const numInStr = require("./index");
+import { describe, expect, test } from "vitest";
+import numInStr from "./index";
 
 describe("exercise2 - problem4", () => {
   test.each([

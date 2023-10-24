@@ -1,57 +1,48 @@
-class BankAccount {
-  #balance;
+export class BankAccount {
+  #balance = 0;
 
-  constructor() {
-    this.#balance = 0;
-  }
-
-  withdraw(amount) {
-    if (amount > this.#balance) {
-      return -1; // Cannot withdraw more than the balance
+  withdraw(amount: number): number {
+    if (amount <= 0 || amount > this.#balance) {
+      return -1;
+    } else {
+      this.#balance -= amount;
+      return this.#balance;
     }
-    this.#balance -= amount;
-    return this.#balance;
   }
 }
 
-class FedexAccount {
-  sendMail(recipient) {
+export class FedexAccount {
+  sendMail(recipient: string): void {
     console.log(`Sending mail to ${recipient} via FedEx.`);
   }
 
-  receiveMail(sender) {
-    console.log(`Receiving mail from ${sender} via FedEx.`);
+  receiveMail(sender: string): void {
+    console.log(`Received mail from ${sender} via FedEx.`);
   }
 }
 
-class KazPostAccount extends BankAccount {
-  sendMail(recipient) {
+export class KazPostAccount extends BankAccount {
+  sendMail(recipient: string): void {
     console.log(`Sending mail to ${recipient} via KazPost.`);
   }
 
-  receiveMail(sender) {
-    console.log(`Receiving mail from ${sender} via KazPost.`);
+  receiveMail(sender: string): void {
+    console.log(`Received mail from ${sender} via KazPost.`);
   }
 }
 
-export { BankAccount, FedexAccount, KazPostAccount };
-
-export function withdrawMoney(accounts, amount) {
-  accounts.forEach((account) => {
-    if (account instanceof BankAccount || account instanceof KazPostAccount) {
+export function withdrawMoney(accounts: (BankAccount | KazPostAccount)[], amount: number): void {
+  for (const account of accounts) {
+    if (account instanceof BankAccount) {
       account.withdraw(amount);
-    } else {
-      console.error("Invalid account for withdrawal:", account);
     }
-  });
+  }
 }
 
-export function sendLetterTo(accounts, recipient) {
-  accounts.forEach((account) => {
-    if (account instanceof FedexAccount || account instanceof KazPostAccount) {
+export function sendLetterTo(accounts: (FedexAccount | KazPostAccount)[], recipient: string): void {
+  for (const account of accounts) {
+    if (account instanceof FedexAccount) {
       account.sendMail(recipient);
-    } else {
-      console.error("Invalid account for sending mail:", account);
     }
-  });
+  }
 }

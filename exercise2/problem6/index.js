@@ -5,4 +5,4 @@ function mapping(arr) {
   }, {});
 }
 
-module.exports = mapping;
+export default mapping;

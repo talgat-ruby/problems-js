@@ -10,4 +10,4 @@ function intWithinBounds(n, lower, upper) {
   }
 }
 
-module.exports = intWithinBounds;
+export default intWithinBounds;

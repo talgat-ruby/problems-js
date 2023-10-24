@@ -1,5 +1,5 @@
-const { describe, expect, test } = require("@jest/globals");
-const arrayOfMultiples = require("./index");
+import { describe, expect, test } from "vitest";
+import arrayOfMultiples from "./index";
 
 describe("exercise2 - problem1", () => {
   test.each([

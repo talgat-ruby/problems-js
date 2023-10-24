@@ -1,5 +1,7 @@
 const { describe, expect, test } = require("@jest/globals");
 const intWithinBounds = require("./index");
+import { describe, expect, test } from "vitest";
+import intWithinBounds from "./index";
 
 describe("exercise1 - problem2", () => {
   test.each([

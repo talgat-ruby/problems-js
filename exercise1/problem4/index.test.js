@@ -1,5 +1,5 @@
-const { describe, expect, test } = require("@jest/globals");
-const makeTitleCase = require("./index");
+import { describe, expect, test } from "vitest";
+import makeTitleCase from "./index";
 
 describe("exercise1 - problem4", () => {
   test.each([

@@ -12,4 +12,4 @@ function numInStr(arr) {
   return result;
 }
 
-module.exports = numInStr;
+export default numInStr;

@@ -1,31 +1,27 @@
-// Update it as much as you want, just don't change the name
-export class Circle {
-    constructor(private radius: number) {}
+// Define interfaces for Circle and Rectangle
+interface Shape {
+  area(): number;
+}
+
+// Implement the Circle class with an area method
+export class Circle implements Shape {
+  constructor(private radius: number) {}
+
+  area(): number {
+    return Math.PI * Math.pow(this.radius, 2);
   }
-  
-  // Update it as much as you want, just don't change the name
-  export class Rectangle {
-    constructor(private width: number, private height: number) {}
+}
+
+// Implement the Rectangle class with an area method
+export class Rectangle implements Shape {
+  constructor(private width: number, private height: number) {}
+
+  area(): number {
+    return this.width * this.height;
   }
-  
-  // Update it as much as you want, just don't change the name
-  export function sumOfAllAreas(...shapes: (Circle | Rectangle)[]): number {
-    function calculateCircleArea(circle: Circle): number {
-      return Math.PI * circle.radius ** 2;
-    }
-  
-    function calculateRectangleArea(rectangle: Rectangle): number {
-      return rectangle.width * rectangle.height;
-    }
-  
-    function calculateArea(shape: Circle | Rectangle): number {
-      if (shape instanceof Circle) {
-        return calculateCircleArea(shape);
-      } else if (shape instanceof Rectangle) {
-        return calculateRectangleArea(shape);
-      }
-      return 0;
-    }
-  
-    return shapes.reduce((total, shape) => total + calculateArea(shape), 0);
-  }
+}
+
+// Function to calculate the sum of areas in a functional way
+export function sumOfAllAreas(...shapes: Shape[]): number {
+  return shapes.reduce((totalArea, shape) => totalArea + shape.area(), 0);
+}
