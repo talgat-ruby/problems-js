@@ -1,5 +1,6 @@
 function concat() {
-  // Your code
+  const args = [].concat(...arguments);
+  return args;
 }
 
 export default concat;

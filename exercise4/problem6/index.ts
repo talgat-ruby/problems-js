@@ -1,19 +1,57 @@
-// Update it as much as you want, just don't change the names
+class BankAccount {
+  #balance;
 
-export class BankAccount {}
+  constructor() {
+    this.#balance = 0;
+  }
 
-export class FedexAccount {}
-
-export class KazPostAccount {}
-
-export function withdrawMoney(accounts, amount) {
-  for (const account of accounts) {
-    account.withdraw(amount);
+  withdraw(amount) {
+    if (amount > this.#balance) {
+      return -1; // Cannot withdraw more than the balance
+    }
+    this.#balance -= amount;
+    return this.#balance;
   }
 }
 
-export function sendLetterTo(accounts, recipient) {
-  for (const account of accounts) {
-    account.sendMail(recipient);
+class FedexAccount {
+  sendMail(recipient) {
+    console.log(`Sending mail to ${recipient} via FedEx.`);
   }
+
+  receiveMail(sender) {
+    console.log(`Receiving mail from ${sender} via FedEx.`);
+  }
+}
+
+class KazPostAccount extends BankAccount {
+  sendMail(recipient) {
+    console.log(`Sending mail to ${recipient} via KazPost.`);
+  }
+
+  receiveMail(sender) {
+    console.log(`Receiving mail from ${sender} via KazPost.`);
+  }
+}
+
+export { BankAccount, FedexAccount, KazPostAccount };
+
+export function withdrawMoney(accounts, amount) {
+  accounts.forEach((account) => {
+    if (account instanceof BankAccount || account instanceof KazPostAccount) {
+      account.withdraw(amount);
+    } else {
+      console.error("Invalid account for withdrawal:", account);
+    }
+  });
+}
+
+export function sendLetterTo(accounts, recipient) {
+  accounts.forEach((account) => {
+    if (account instanceof FedexAccount || account instanceof KazPostAccount) {
+      account.sendMail(recipient);
+    } else {
+      console.error("Invalid account for sending mail:", account);
+    }
+  });
 }
