@@ -5,6 +5,7 @@ import SlytherinUser from "./model/SlytherinUser.ts";
 import GryffindorUser from "./model/GryffindorUser.ts";
 import RavenclawUser from "./model/RavenclawUser.ts";
 import HufflepuffUser from "./model/HufflepuffUser.ts";
+import BotLogic from "./model/BotLogic.ts";
 
 window.addEventListener("unload", unloadHandler, {once: true});
 window.addEventListener("load", loadHandler, {once: true});
@@ -44,6 +45,6 @@ function getPlayers() {
     const slytherinUser = new SlytherinUser();
     const ravenclawUser = new RavenclawUser();
     const hufflepuffUser = new HufflepuffUser();
-
-    return [gryffindorUser, slytherinUser, ravenclawUser, hufflepuffUser];
+    const bot = new BotLogic("Bot","./bot.jpg");
+    return [gryffindorUser,slytherinUser,ravenclawUser,hufflepuffUser,bot];
 }
