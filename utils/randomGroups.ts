@@ -23,6 +23,6 @@ function sortToGroups(groups: string[][], students: { name: string }[]) {
 
 console.log(
   group(6, students)
-    .map((students, i) => `Group ${i}: ${students.join(", ")}`)
+    .map((students, i) => `Team ${i + 1}: ${students.join(", ")}`)
     .join("\n")
 );
